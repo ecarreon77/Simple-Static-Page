@@ -1,5 +1,6 @@
 import React, { Suspense, useImperativeHandle, useRef } from "react";
 import "./App.css"; // Assuming you create an App.css for styling
+import SuspenseFallback from "./components/SuspenseFallback";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const AboutUs = React.lazy(() => import("./pages/AboutUs"));
@@ -30,13 +31,13 @@ const AppRoutes = React.forwardRef(({ onScroll }, ref) => {
 
   return (
     <div className="app-container">
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<SuspenseFallback />}>
         {/* Always show Header at the top */}
-        <div ref={headerRef}>
+        <div ref={headerRef} className="header">
           <Header />
         </div>
 
-        {/* Render different pages like Home based on the route */}
+        {/* Render Home content */}
         <div className="content" ref={homeRef}>
           <Home />
         </div>

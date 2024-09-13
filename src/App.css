@@ -1,28 +1,28 @@
 html,
-body,
-.app-container {
+body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100vh; /* Full viewport height */
 }
 
 .header {
-  flex-shrink: 0; /* Header at the top */
+  flex-shrink: 0; /* Prevent header from shrinking */
 }
 
 .content {
-  flex-grow: 1; /* Home content takes the middle space */
+  flex-grow: 1; /* Ensure content takes available space */
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px; /* Add some padding if needed */
 }
 
 .footer {
-  flex-shrink: 0; /* AboutUs at the bottom */
+  flex-shrink: 0; /* Footer at the bottom */
 }
