@@ -8,6 +8,8 @@ import ViewCarouselIcon from "@mui/icons-material/ViewCarousel";
 import Paper from "@mui/material/Paper";
 import InfoIcon from "@mui/icons-material/Info";
 import AppRoutes from "../routes";
+import DiamondIcon from "@mui/icons-material/Diamond";
+import Diamond from "@mui/icons-material/Diamond";
 
 const Navigation = () => {
   const [value, setValue] = useState(0);
@@ -19,13 +21,13 @@ const Navigation = () => {
     // Handle navigation based on the selected tab
     switch (newValue) {
       case 0:
-        appRoutesRef.current.scrollToSection("header"); // Scroll to Header
+        appRoutesRef.current.scrollToSection("earring"); // Scroll to Header
         break;
       case 1:
-        appRoutesRef.current.scrollToSection("home"); // Scroll to Home
+        appRoutesRef.current.scrollToSection("necklace"); // Scroll to Home
         break;
       case 2:
-        appRoutesRef.current.scrollToSection("aboutUs"); // Scroll to About Us
+        appRoutesRef.current.scrollToSection("ring"); // Scroll to About Us
         break;
       default:
         break;
@@ -47,16 +49,16 @@ const Navigation = () => {
           onChange={handleNavigationChange}
         >
           <BottomNavigationAction
-            label="Header"
-            icon={<ViewCarouselIcon fontSize="large" />}
+            label="Earring"
+            icon={<Diamond fontSize="large" />}
           />
           <BottomNavigationAction
-            label="Home"
-            icon={<HomeIcon fontSize="large" />}
+            label="Necklace"
+            icon={<Diamond fontSize="large" />}
           />
           <BottomNavigationAction
-            label="About Us"
-            icon={<InfoIcon fontSize="large" />}
+            label="Ring"
+            icon={<Diamond fontSize="large" />}
           />
         </BottomNavigation>
       </Paper>

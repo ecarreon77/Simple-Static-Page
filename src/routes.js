@@ -2,26 +2,30 @@ import React, { Suspense, useImperativeHandle, useRef } from "react";
 import "./App.css"; // Assuming you create an App.css for styling
 import SuspenseFallback from "./components/SuspenseFallback";
 
-const Home = React.lazy(() => import("./pages/Home"));
-const AboutUs = React.lazy(() => import("./pages/AboutUs"));
-const Header = React.lazy(() => import("./pages/Header"));
+// const Home = React.lazy(() => import("./pages/Home"));
+// const AboutUs = React.lazy(() => import("./pages/AboutUs"));
+// const Header = React.lazy(() => import("./pages/Header"));
+
+const Earring = React.lazy(() => import("./pages/Earring"));
+const Necklace = React.lazy(() => import("./pages/Necklace"));
+const Ring = React.lazy(() => import("./pages/Ring"));
 
 const AppRoutes = React.forwardRef(({ onScroll }, ref) => {
-  const homeRef = useRef(null);
-  const aboutUsRef = useRef(null);
-  const headerRef = useRef(null);
+  const earringRef = useRef(null);
+  const necklaceRef = useRef(null);
+  const ringRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
     scrollToSection: (section) => {
       switch (section) {
-        case "header":
-          headerRef.current.scrollIntoView({ behavior: "smooth" });
+        case "earring":
+          earringRef.current.scrollIntoView({ behavior: "smooth" });
           break;
-        case "home":
-          homeRef.current.scrollIntoView({ behavior: "smooth" });
+        case "necklace":
+          necklaceRef.current.scrollIntoView({ behavior: "smooth" });
           break;
-        case "aboutUs":
-          aboutUsRef.current.scrollIntoView({ behavior: "smooth" });
+        case "ring":
+          ringRef.current.scrollIntoView({ behavior: "smooth" });
           break;
         default:
           break;
@@ -32,20 +36,20 @@ const AppRoutes = React.forwardRef(({ onScroll }, ref) => {
   return (
     <div className="app-container">
       <Suspense fallback={<SuspenseFallback />}>
-        {/* Always show Header at the top */}
-        <div ref={headerRef} className="header">
-          <Header />
+        {/* Render Earring content */}
+        <div ref={earringRef} className="earring">
+          <Earring />
         </div>
 
-        {/* Render Home content */}
-        <div className="content" ref={homeRef}>
-          <Home />
+        {/* Render Necklace content */}
+        <div className="necklace" ref={necklaceRef}>
+          <Necklace />
         </div>
 
-        {/* Always show AboutUs at the bottom */}
-        <footer className="footer" ref={aboutUsRef}>
-          <AboutUs />
-        </footer>
+        {/* Render Ring content*/}
+        <div className="ring" ref={ringRef}>
+          <Ring />
+        </div>
       </Suspense>
     </div>
   );

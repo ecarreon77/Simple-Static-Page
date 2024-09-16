@@ -11,11 +11,7 @@ body {
   height: 100vh; /* Full viewport height */
 }
 
-.header {
-  flex-shrink: 0; /* Prevent header from shrinking */
-}
-
-.content {
+.earring {
   flex-grow: 1; /* Ensure content takes available space */
   display: flex;
   align-items: center;
@@ -23,6 +19,18 @@ body {
   padding: 20px; /* Add some padding if needed */
 }
 
-.footer {
-  flex-shrink: 0; /* Footer at the bottom */
+.necklace {
+  flex-grow: 1; /* Ensure content takes available space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Add some padding if needed */
+}
+
+.ring {
+  flex-grow: 1; /* Ensure content takes available space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Add some padding if needed */
 }

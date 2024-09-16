@@ -12,7 +12,7 @@ import { FooterItem, FooterLinkItem } from "../components/styled.Item";
 import { BsLinkedin } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 import { RiInstagramFill } from "react-icons/ri";
-import goldLogo from "../assets/images/headerImage.png";
+import goldLogo from "../assets/images/ElizGold.png";
 import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
